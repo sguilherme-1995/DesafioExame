@@ -1,6 +1,7 @@
 import React,{ Component } from 'react'
 import './Conversor.css'
 export default class Conversor extends Component{
+    
    constructor(props){
        super(props);
 
@@ -40,15 +41,19 @@ export default class Conversor extends Component{
             
             </div>
             
+            
         )
+        
     }
     
+    
 }
-// document.addEventListener('keypress',function(e){
-//     if(e.which === 13){
-        
-//     }
-// },false)
+document.addEventListener('keypress',function(e){
+    if(e.which === 13){
+        console.log("Apertado");
+    }
+},false)
+
 
 
 
