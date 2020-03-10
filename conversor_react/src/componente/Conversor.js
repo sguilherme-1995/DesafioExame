@@ -29,6 +29,8 @@ export default class Conversor extends Component{
         this.setState({moedaB_valor})
     })
    }
+
+   
   
    
     render(){
