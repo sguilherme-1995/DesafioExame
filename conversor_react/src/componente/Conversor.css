@@ -3,3 +3,13 @@
     max-width: 300px;
     box-shadow: 0 4px 8px 0 black;
 }
+.ValorRetornado{
+    text-align: center;
+}
+.Moedas{
+    text-align: center;
+    color: darkslategray;
+}
+.Botao{
+    background-color: rgb(200, 245, 133);
+}

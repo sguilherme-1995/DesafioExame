@@ -1,0 +1,18 @@
+.linha{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+h3{
+    text-align: right;
+    color: darkgreen;
+}
+h1{
+    text-align: center;
+}
+.App{
+    margin: auto;
+    max-width: 300px;
+
+}
