@@ -30,7 +30,7 @@ export default class Conversor extends Component{
     })
    }
 
-   
+ 
   
    
     render(){
@@ -39,8 +39,7 @@ export default class Conversor extends Component{
                 <h2 className="Moedas">{this.props.moedaA} para {this.props.moedaB}</h2>
                 <input type="text" onChange={(event)=>{this.setState({moedaA_valor:event.target.value})}}></input>
                 <input type="button" value="Converter" onClick={this.converter} className="Botao"></input>
-                <h2 className="ValorRetornado">{this.state.moedaB_valor}</h2>
-            
+                <h2 className="ValorRetornado">${this.state.moedaB_valor}</h2>
             </div>
             
             
@@ -50,11 +49,13 @@ export default class Conversor extends Component{
     
     
 }
-document.addEventListener('keypress',function(e){
-    if(e.which === 13){
-        console.log("Apertado");
-    }
-},false)
+// function enterPress() {
+//     document.addEventListener('keypress',function(e){
+//         if(e.which === 13){
+            
+//         }
+//     },false)
+//    }
 
 
 

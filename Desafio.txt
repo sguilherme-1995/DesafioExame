@@ -1,3 +1,6 @@
-O desafio consiste em criar uma calculadora que faz a cotação do real(R$) para dolar(USD)
+1 - O desafio consiste em criar uma calculadora que faz a cotação do real(R$) para dolar(USD)
 usando uma api online (JSON) para informar a cotação do dolar atual e fazer a converção
 para real!
+
+2 - O desafio consiste em criar uma calculadora de salario liquido que converte o valor do salario 
+bruto em liquido calculando as horas de trabalho, INSS e o valor pago por hora para o funcionario! 
