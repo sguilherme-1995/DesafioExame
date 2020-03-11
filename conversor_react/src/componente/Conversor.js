@@ -10,6 +10,7 @@ export default class Conversor extends Component{
            moedaB_valor:0,
        }
        this.converter = this.converter.bind(this)
+       this.onEnterPress = this.onEnterPress.bind(this)
    }
    
 
@@ -28,16 +29,21 @@ export default class Conversor extends Component{
         let moedaB_valor = (parseFloat(this.state.moedaA_valor) * cotacao).toFixed(2);
         this.setState({moedaB_valor})
     })
+
    }
 
- 
+   onEnterPress(e) {
+        if(e.key === 'Enter'){    
+            this.converter()
+        }
+   }
   
    
     render(){
         return(
             <div className="conversor">
                 <h2 className="Moedas">{this.props.moedaA} para {this.props.moedaB}</h2>
-                <input type="text" onChange={(event)=>{this.setState({moedaA_valor:event.target.value})}}></input>
+                <input type="text" onChange={(event)=>{this.setState({moedaA_valor:event.target.value})}} onKeyPress={e => this.onEnterPress(e)}></input>
                 <input type="button" value="Converter" onClick={this.converter} className="Botao"></input>
                 <h2 className="ValorRetornado">${this.state.moedaB_valor}</h2>
             </div>
@@ -49,13 +55,7 @@ export default class Conversor extends Component{
     
     
 }
-// function enterPress() {
-//     document.addEventListener('keypress',function(e){
-//         if(e.which === 13){
-            
-//         }
-//     },false)
-//    }
+
 
 
 
