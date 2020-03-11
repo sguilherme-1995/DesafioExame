@@ -8,13 +8,16 @@
 <title>Calculadora de salário liquido Exame</title>
 </head>
 <body>
+	<div>
+		<h1><p>Calculadora de salario líquido</p></h1>
+	</div>
 	<div class="formulario">
 <form name="Formulario">
-  R$ por Hora: R$ 
-  <input type="text" name="RHora" size="10"><BR>Horas Trabalho:&nbsp; 
-  <input type="text" name="Horas" size="5"><BR>Porcentagem:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-  <input type="text" name="Porcentagem" size="3">% (INSS)<p>&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="submit" value="Salário Líquido..." name="Calcular" onclick="Calcula()"></p>
+  <h3>Valor por Hora: R$</h3> 
+	<div class="textoform1"><h3>Horas Trabalho: <input type="text" name="RHora" size="10"><br></h3></div> 
+	<div class="textoform2"><h3>Porcentagem: <input type="text" name="Horas" size="5"><BR></h3></div> 
+	<div class="textoform3"><h3>INSS: <input type="text" name="Porcentagem" size="3">%<p><br></h3></div>
+	<div><h3><input type="submit" value="     Salário Líquido...     " name="Calcular" onclick="Calcula()"><br><br></p></h3></div>
 </form>
 </div>
 <Script Language="JavaScript">
@@ -26,10 +29,46 @@
 		R1 = parseFloat(VH) * parseFloat(H);
 		R2 = (parseFloat(INSS) / 100) * R1;
 		R3 = R1 - R2;
-		alert('Salário Líquido = R$' + R3);		
+		alert('O seu salário líquido é de R$' + R3);		
 	    // document.write('Salário Líquido = R$', R3);	
 	}
 
 </Script>
+<style>
+	.formulario{
+	justify-content: space-around;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px black;
+	margin-top: 50px;
+	
+}
+body{
+    text-align: center;
+    
+}
+h1{
+text-align: center;
+color: darkslategray;
+}
+h3{
+	color: rgb(56, 55, 55);
+	text-align: center;
+	
+	justify-content: space-around;
+
+}
+.textoform1{
+	margin-bottom: 5px;
+}
+.textoform2{
+	margin-bottom: 5px;
+}
+.textoform3{
+	margin-bottom: 5px;
+}
+
+
+</style>
 </body>
 </html>
