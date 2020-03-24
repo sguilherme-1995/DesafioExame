@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +11,7 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
     
     <title>Conversor Exame</title>
   </head>
@@ -30,5 +29,79 @@
     <div>
       <a href="https://exame.abril.com.br/" target="_blank"><img src="logo-exame.jpg" height="93" width="166" class="imagem"></a>
     </div>
+    <script>
+      import React,{ Component } from 'react'
+import './Conversor.css'
+export default class Conversor extends Component{
+  
+      constructor(props){
+       super(props);
+
+       this.state = {
+           moedaA_valor:"",
+           moedaB_valor:0,
+       }
+       this.converter = this.converter.bind(this)
+       this.onEnterPress = this.onEnterPress.bind(this)
+   }
+   
+
+   converter(){
+
+    let de_para = `${this.props.moedaA}_${this.props.moedaB}`;
+    let url = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=ultra&apiKey=149cc47bf37917e35410`;
+
+    fetch(url)
+    .then(res=>{
+
+        return res.json()
+    })
+    .then(json=>{
+        let cotacao = json[de_para].val
+        let moedaB_valor = (parseFloat(this.state.moedaA_valor) * cotacao).toFixed(2);
+        this.setState({moedaB_valor})
+    })
+
+   }
+
+   onEnterPress(e) {
+        if(e.key === 'Enter'){    
+            this.converter()
+        }
+   }
+  
+   
+    render(){
+        return(
+            <div className="conversor">
+                <h2 className="Moedas">{this.props.moedaA} para {this.props.moedaB}</h2>
+                <input type="text" onChange={(event)=>{this.setState({moedaA_valor:event.target.value})}} onKeyPress={e => this.onEnterPress(e)}></input>
+                <input type="button" value="Converter" onClick={this.converter} className="Botao"></input>
+                <h2 className="ValorRetornado">${this.state.moedaB_valor}</h2>
+            </div>
+            
+            
+        )
+        
+    }}
+    </script>
+     <style>
+      .conversor{
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px 0 black;
+}
+.ValorRetornado{
+    text-align: center;
+}
+.Moedas{
+    text-align: center;
+    color: darkslategray;
+}
+.Botao{
+    background-color: rgb(200, 245, 133);
+}
+
+    </style>
   </body>
 </html>
